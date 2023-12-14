@@ -1,0 +1,19 @@
+function [exectime, data] = leer_quanzer(seg, data)
+    
+
+temp= ttTryFetch('comandos');
+
+switch seg
+ case 1
+    switch temp
+        case 's'
+                %temp = ttTryFetch('QuanzerState');
+                %ttAnalogOut(data.uChan, temp);
+                ttCreateJob('Out_Quanzer');
+    end
+    
+ exectime=0.00001;
+ case 2
+    % Verificar el tipo de mensaje y su contenido
+    exectime = -1; % Indicar el final de la ejecución de esta tarea
+end
