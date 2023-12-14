@@ -1,0 +1,12 @@
+function [exectime, data] = msgRcvCtrl(seg, data)
+
+temp = ttGetMsg;
+ttTryPost(temp.type, temp.msg);% indica a que mailbox y que mensaje se envia
+
+if strcmp('sensor_reference_signal', temp.type)
+  ttCreateJob('pid_task')
+elseif strcmp('power_ping', temp.type)
+  ttCreateJob('power_response_task');
+end
+
+exectime = -1;
