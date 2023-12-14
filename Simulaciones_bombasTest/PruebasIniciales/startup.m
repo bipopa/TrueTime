@@ -1,0 +1,5 @@
+setenv('TTKERNEL','C:\Users\Alvaro UAO\Desktop\Truetime_matlab\TrueTime-main\kernel')
+%getenv('TTKERNEL')
+addpath(getenv('TTKERNEL'))
+addpath(strcat(getenv('TTKERNEL'),'/matlab/help'))
+addpath(strcat(getenv('TTKERNEL'),'/matlab/'))
